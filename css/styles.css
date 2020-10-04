@@ -1,0 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.gallery {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  margin-right: 50px;
+  margin-left: 50px;
+  padding: 0;
+}
