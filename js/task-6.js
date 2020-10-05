@@ -26,8 +26,8 @@
 
 const inputRef = document.querySelector('#validation-input');
 
-const onInputFocusChange = () => {
-  if (inputRef.value.length >= inputRef.dataset.length) {
+const onInputBlur = () => {
+  if (Number(inputRef.value.length) === Number(inputRef.dataset.length)) {
     inputRef.classList.add('valid');
     inputRef.classList.remove('invalid');
   } else {
@@ -35,4 +35,10 @@ const onInputFocusChange = () => {
     inputRef.classList.remove('valid');
   }
 };
-inputRef.addEventListener('change', onInputFocusChange);
+
+inputRef.addEventListener('blur', onInputBlur);
+// inputRef.addEventListener('input', onInputBlur);
+
+// Задание 6: выполнено не согласно условиям.У вас бордер приобретает зеленый цвет в случае,
+//   если длина введенных символов не только равна, но и больше заданного числа.
+// Также подправьте событие согласно условию: https://prnt.sc/utf5st
