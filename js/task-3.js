@@ -30,9 +30,12 @@ const images = [
 const ulRef = document.querySelector('ul#gallery');
 ulRef.classList.add('gallery');
 
-images.map(({ url, alt }) => {
-  ulRef.insertAdjacentHTML(
-    'beforeend',
-    `<li><img class="image" src="${url}" alt="${alt}" width="500"></li>`,
-  );
-});
+const imagesList = images
+  .map(({ url, alt }) => {
+    return `<li><img class="image" src="${url}" alt="${alt}" width="500"></li>`;
+  })
+  .join('');
+
+ulRef.insertAdjacentHTML('beforeend', imagesList);
+
+// Задание 3: внесите исправления с учетом этого требования https://prnt.sc/utezw4
